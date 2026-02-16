@@ -1,0 +1,44 @@
+import type { FileData, FileFormat, FormatHandler } from "../FormatHandler.ts";
+
+class mcMapHandler implements FormatHandler {
+
+    public name: string = "dummy";
+    public supportedFormats?: FileFormat[];
+    public ready: boolean = false;
+
+    async init() {
+        this.supportedFormats = [
+            {
+                name: "RGB",
+                format: "rgb",
+                extension: "png",
+                mime: "image/png",
+                from: false,
+                to: false,
+                internal: "png"
+            },
+            {
+                name: "Minecraft Map File",
+                format: "mcmap",
+                extension: "dat",
+                mime: "application/x-minecraft-map",
+                from: false,
+                to: true,
+                internal: "mcmap"
+            }
+        ];
+        this.ready = true;
+    }
+
+    async doConvert(
+        inputFiles: FileData[],
+        inputFormat: FileFormat,
+        outputFormat: FileFormat
+    ): Promise<FileData[]> {
+        const outputFiles: FileData[] = [];
+        return outputFiles;
+    }
+
+}
+
+export default mcMapHandler;
