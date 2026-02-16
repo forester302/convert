@@ -85,7 +85,7 @@ class mcMapHandler implements FormatHandler {
                 format: "rgb",
                 extension: "rgb",
                 mime: "image/x-rgb",
-                from: true,
+                from: false,
                 to: true,
                 internal: "rgb"
             },
@@ -93,9 +93,9 @@ class mcMapHandler implements FormatHandler {
                 name: "Minecraft Map File",
                 format: "mcmap",
                 extension: "dat",
-                mime: "application/x-minecraft-map", // I am required to put something here so i made it up
+                mime: "application/octet-stream", // I am required to put something here
                 from: true,
-                to: true,
+                to: false,
                 internal: "mcmap"
             },
         ];
