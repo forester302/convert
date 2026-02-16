@@ -93,7 +93,7 @@ class mcMapHandler implements FormatHandler {
                 name: "Minecraft Map File",
                 format: "mcmap",
                 extension: "dat",
-                mime: "application/octet-stream", // I am required to put something here
+                mime: "application/x-minecraft-map", // I am required to put something here
                 from: true,
                 to: false,
                 internal: "mcmap"
@@ -108,8 +108,6 @@ class mcMapHandler implements FormatHandler {
         outputFormat: FileFormat
     ): Promise<FileData[]> {
         const outputFiles: FileData[] = [];
-
-        console.log(inputFiles[0].bytes, inputFormat, outputFormat)
 
         if (inputFormat.internal == "mcmap" && outputFormat.internal == "rgb") {
             for (const file of inputFiles) {
